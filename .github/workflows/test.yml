@@ -27,6 +27,6 @@ jobs:
            #     })
       - name: run my action
         uses: maxstreifeneder/MyFirstAction@main
-    #  env:
-      #    GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN2 }}
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #    GITHUB_API_URL: https://github.tools.sap/api/v3
