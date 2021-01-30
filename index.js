@@ -12,7 +12,7 @@ Toolkit.run(async (tools) => {
     title: "New issue!",
     body: "Hello Universe!",
   });*/
-  let repos tools.github.repos.listForOrg({
+  let repos = tools.github.repos.listForOrg({
     org: "sap-samples",
     type: "public",
   })
