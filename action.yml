@@ -1,0 +1,8 @@
+name: FirstAction
+description: just a testimonial
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: activity
+  color: white
