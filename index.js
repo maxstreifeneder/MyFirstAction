@@ -1,6 +1,12 @@
-const { Toolkit } = require('actions-toolkit')
+const { Toolkit } = require("actions-toolkit");
+
+const newIssue = await tools.github.issues.create({
+  ...tools.context.repo,
+  title: "New issue!",
+  body: "Hello Universe!",
+});
 
 // Run your GitHub Action!
-Toolkit.run(async tools => {
-  tools.exit.success('We did it!')
-})
+Toolkit.run(async (tools) => {
+  tools.exit.success("We did it!");
+});
