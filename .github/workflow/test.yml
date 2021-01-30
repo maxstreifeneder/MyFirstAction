@@ -1,0 +1,32 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: [ self-hosted ]
+
+    steps:
+          - uses: actions/github-script@v3
+            with:
+              github-token: ${{secrets.GITHUB_TOKEN}}
+              script: |
+                github.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: 'teammeeting agenda'
+                  body: '👋 Thanks for reporting!'
+                })
+  #  - name: run my action
+   #   uses: D063937/FirstAction@master
+    #  env:
+     #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN2 }}
+      #    GITHUB_API_URL: https://github.tools.sap/api/v3
