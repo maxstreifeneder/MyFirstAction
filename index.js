@@ -17,7 +17,7 @@ Toolkit.run(async (tools) => {
     type: "public",
   })
   .then(({ data }) => {
-    console.log(data);
+    console.log(repos);
   });
   tools.log.info("this is a log output");
  // tools.log(newIssue);
