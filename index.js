@@ -1,7 +1,11 @@
 const { Toolkit } = require("actions-toolkit");
 
+const tools = new Toolkit({
+  secrets: ["GITHUB_TOKEN"],
+});
+
 // Run your GitHub Action!
-Toolkit.run(async (tools) => {
+tools.run(async (tools) => {
   tools.log.info(tools.token);
   const newIssue = await tools.github.issues.create({
     repo: tools.context.repo,
