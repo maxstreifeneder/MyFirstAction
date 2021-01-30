@@ -5,7 +5,7 @@ const newIssue = await tools.github.issues.create({
   title: "New issue!",
   body: "Hello Universe!",
 });
-
+tools.log.info("this is a log output");
 tools.log(newIssue);
 
 // Run your GitHub Action!
