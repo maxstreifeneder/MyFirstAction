@@ -3,7 +3,7 @@ const { Toolkit } = require("actions-toolkit");
 // Run your GitHub Action!
 Toolkit.run(async (tools) => {
   const newIssue = await tools.github.issues.create({
-    ...tools.context.repo,
+    repo: tools.context.repo,
     title: "New issue!",
     body: "Hello Universe!",
   });
