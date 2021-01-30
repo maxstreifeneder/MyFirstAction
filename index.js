@@ -7,13 +7,20 @@ const tools = new Toolkit({
 // Run your GitHub Action!
 Toolkit.run(async (tools) => {
   tools.log.info(tools.token);
-  const newIssue = await tools.github.issues.create({
+  /*const newIssue = await tools.github.issues.create({
     repo: tools.context.repo,
     title: "New issue!",
     body: "Hello Universe!",
+  });*/
+  let repos tools.github.repos.listForOrg({
+    org: "sap-samples",
+    type: "public",
+  })
+  .then(({ data }) => {
+    console.log(data);
   });
   tools.log.info("this is a log output");
-  tools.log(newIssue);
+ // tools.log(newIssue);
 
   tools.exit.success("We did it!");
 });
