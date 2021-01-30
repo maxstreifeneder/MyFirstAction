@@ -6,6 +6,8 @@ const newIssue = await tools.github.issues.create({
   body: "Hello Universe!",
 });
 
+tools.log(newIssue);
+
 // Run your GitHub Action!
 Toolkit.run(async (tools) => {
   tools.exit.success("We did it!");
