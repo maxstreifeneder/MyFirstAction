@@ -5,7 +5,7 @@ const tools = new Toolkit({
 });
 
 // Run your GitHub Action!
-tools.run(async (tools) => {
+Toolkit.run(async (tools) => {
   tools.log.info(tools.token);
   const newIssue = await tools.github.issues.create({
     repo: tools.context.repo,
